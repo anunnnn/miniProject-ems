@@ -49,3 +49,11 @@ Development Steps:
 3. Navigate to ListEmployees page After form Submission done.
 4.  Test above changes.
 
+--> add employee form validation
+Add Employee Feature -  Add Employee Form Validation
+1. Use the useState hook to initialize state variables that will hold validation errors.
+2. write a validation function that checks thr form data and returns validation errors.
+3. Validate form on submission.
+4. Display Validation Errors.
+5. Test above Changes.
+
