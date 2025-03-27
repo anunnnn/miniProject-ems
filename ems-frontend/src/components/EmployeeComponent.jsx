@@ -8,6 +8,12 @@ const EmployeeComponent = () => {
     const [ lastName, setLastName ] = useState('');
     const [ email, setEmail ] = useState('');
 
+    const [ errors, setErrors ] = useState({
+        firstName : '',
+        lastName : '',
+        email : ''
+    });
+
     const navigator = useNavigate();
 
    
