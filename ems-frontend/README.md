@@ -42,3 +42,10 @@ Development Steps:
 2. Design Add Employee form using HTML and Bootstrap.
 3. Create JavaScript Function to Handle onClick Event ( Form Submit ) .
 4. Test React App ( print form data in broeser console ).
+
+--> add employee feature - Connect React to Add Employee Rest API
+1. In EmployeeService, write a code to call Add Employee REST API using axios.
+2. Change EmployeeComponent to call EmployeeService method.
+3. Navigate to ListEmployees page After form Submission done.
+4.  Test above changes.
+
