@@ -28,6 +28,43 @@ const EmployeeComponent = () => {
 
         })
     }
+
+    function validateForm () {
+        let valid = true;
+
+        const errorsCopt = { ... errors }
+
+        // validate first bane
+        if( firstName.trim() ){
+            errorsCopy.firstName = '';
+        }
+        else {
+            errorsCopy.firstName = 'First Name is Required';
+            valid = false;
+        }
+
+
+        // validates last name
+        if( lastName.trim() ){
+            errorsCopy.lastName = '';
+        }
+        else {
+            errorsCopy.lastName = 'Last Name is Required';
+            valid = false;
+        }
+
+        // validates email
+        if( email.trim() ){
+            errorsCopy.email = '';
+        }
+        else {
+            errorsCopy.email = 'Email id is Required';
+            valid = false;
+        }
+
+        setErrors(errorsCopy);
+        return valid;
+    }
  
     return (
         <div className = 'container'>
