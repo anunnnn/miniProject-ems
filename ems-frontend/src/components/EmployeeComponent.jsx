@@ -37,7 +37,7 @@ const EmployeeComponent = () => {
     function validateForm () {
         let valid = true;
 
-        const errorsCopt = { ... errors }
+        const errorsCopy = { ... errors }
 
         // validate first bane
         if( firstName.trim() ){
@@ -92,11 +92,15 @@ const EmployeeComponent = () => {
                                     placeholder = 'Enter First Name'
                                     name = 'firstName'
                                     value = {firstName}
-                                    className = 'form-control'
+                                    className = 'form-control' ${ (errors.firstName) ? 'is-invalid' : ''}
                                     onChange = {(e) => setFirstName(e.target.value)}>
 
                                 </input>
-
+                                
+                                {errors.firstName && 
+                                    <div className = 'invalid-feedback' >
+                                        {errors.firstName}
+                                    </div>}
                             </div>
 
                             <div className = 'form-group mb-2'>
