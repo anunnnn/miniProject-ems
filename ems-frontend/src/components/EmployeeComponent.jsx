@@ -9,7 +9,6 @@ const EmployeeComponent = () => {
     const [ email, setEmail ] = useState('');
 
     const { id } = useParams();
-   // const employeeId = id ? parseInt(id, 10) : null; // Ensure it's a number
     
     const [ errors, setErrors ] = useState({
         firstName : '',

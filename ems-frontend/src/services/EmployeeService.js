@@ -18,4 +18,4 @@ export const getEmployee = ( employeeId ) => axios.get( REST_API_BASE_URL + '/' 
 export const updateEmployee = (employeeId, employee) => axios.put( REST_API_BASE_URL + '/' + employeeId, employee );
 
 // // Code to Delete Employee REST API using axios
-// export const deleteEmployee = (id) => axios.delete( REST_API_BASE_URL + '/' + id );
+export const deleteEmployee = (employeeId) => axios.delete( REST_API_BASE_URL + '/' + employeeId );
