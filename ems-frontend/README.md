@@ -57,3 +57,15 @@ Add Employee Feature -  Add Employee Form Validation
 4. Display Validation Errors.
 5. Test above Changes.
 
+
+-->> Add Update button, title and route
+1. Add Update button to list employee page
+2. Add Route for Update Employee in App component
+3. Change Page Title Dynamically ( EmployeeComponent supports both Add and Update )
+4. Test above changes.
+
+
+
+
+
+
