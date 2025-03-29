@@ -71,6 +71,22 @@ Add Employee Feature -  Add Employee Form Validation
 2. Use useEffect hook to populate the employee data in the form for update.
 3. Test above changes.
 
+---> Update Employee Feature - Connect React App to Update Employee REST API
+1. In EmployeeService, write a code to call Update Employee ReST API using axios.
+2. Change EmployeeComponent.saveOrUpdateEmployee() method to perform both add and update employee operations.
+3. Test above activities.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
