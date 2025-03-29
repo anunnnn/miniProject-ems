@@ -20,8 +20,7 @@ const EmployeeComponent = () => {
     const saveEmployee = ( e ) => {
         e.preventDefault();
 
-        if ( validationForm ){
-            
+        if ( validateForm() ){
             const employee = { firstName, lastName, email }
             console.log(employee);
 
@@ -37,7 +36,7 @@ const EmployeeComponent = () => {
     function validateForm () {
         let valid = true;
 
-        const errorsCopy = { ... errors }
+        const errorsCopy = {... errors }
 
         // validate first bane
         if( firstName.trim() ){
@@ -92,7 +91,8 @@ const EmployeeComponent = () => {
                                     placeholder = 'Enter First Name'
                                     name = 'firstName'
                                     value = {firstName}
-                                    className = 'form-control' ${ (errors.firstName) ? 'is-invalid' : ''}
+                                    className = {`form-control ${ (errors.firstName) ? "is-invalid" : ''}`}
+                                    // className = {`form-control ${errors.firstName ? "is-invalid" : ""}`}
                                     onChange = {(e) => setFirstName(e.target.value)}>
 
                                 </input>
@@ -113,10 +113,15 @@ const EmployeeComponent = () => {
                                     placeholder = 'Enter Last Name'
                                     name = 'lastName'
                                     value = {lastName}
-                                    className = 'form-control'
+                                    className = {`form-control ${ (errors.lastName) ? "is-invalid" : ''}`}
                                     onChange = {(e) => setLastName(e.target.value)}>
 
                                 </input>
+
+                                {errors.lastName && 
+                                    <div className = 'invalid-feedback' >
+                                        {errors.lastName}
+                                    </div>}
 
                             </div>
 
@@ -130,14 +135,20 @@ const EmployeeComponent = () => {
                                     placeholder = 'Enter Your Email Id'
                                     name = 'email'
                                     value = {email}
-                                    className = 'form-control'
+                                    className = {`form-control ${ (errors.email) ? "is-invalid" : ''}`}
                                     onChange = {(e) => setEmail(e.target.value)}>
 
                                 </input>
 
+                                {errors.email && 
+                                    <div className = 'invalid-feedback' >
+                                        {errors.email}
+                                    </div>}
+
                             </div>
 
                             <button className = 'btn btn-success' onClick = {saveEmployee}> Submit </button>
+                        
                         </form>
 
                     </div>
