@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { createEmployee } from '../services/EmployeeService';
 
 const EmployeeComponent = () => {
@@ -15,6 +15,7 @@ const EmployeeComponent = () => {
     });
 
     const navigator = useNavigate();
+    const { id } = useParams();
 
    
     const saveEmployee = ( e ) => {
@@ -69,16 +70,25 @@ const EmployeeComponent = () => {
         setErrors(errorsCopy);
         return valid; 
     }
- 
+
+    function pageTitle ( id ) {
+        if ( id ) {
+            return <h2 className = 'text-center'> Update Employee </h2>
+        }
+        else {
+            return <h2 className = 'text-center'> Add Employee </h2>
+        }    
+    }
+
+
     return (
         <div className = 'container'>
             <br></br>
            <div className = 'row'>
                 <div className = 'card col-md-6 offset-md-3'>
-                    <h2 className = 'text-center'>
-                        Add Employee
-                    </h2>
-
+                    {
+                        pageTitle(id)
+                    }
                     <div className = 'card-body'>
                         <form>
                             <div className = 'form-group mb-2'>

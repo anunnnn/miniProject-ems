@@ -18,7 +18,10 @@ const ListEmployeeComponent = () => {
 
    function addNewEmployee () {
     navigator('/add-employee')
+   }
 
+   function updateEmployee (id) {
+    navigator('/edit-employee/$(id)')
    }
 
     return (
@@ -33,20 +36,25 @@ const ListEmployeeComponent = () => {
       <table className='table table-striped table-bordered'>
         <thead>
             <tr>
+                <th> Employee Id </th>
                 <th> Employee First Name </th>
-                <th>Employee Last Name</th>
-                <th>Employee Email Id</th>
+                <th> Employee Last Name</th>
+                <th> Employee Email Id</th>
+                <th> Actions </th>
             </tr>
         </thead>
 
         <tbody>
             {
-                employees.map((emoployee)=>
-                    <tr key = {emoployee.id} >
-                        <td> { emoployee.id } </td>
-                        <td> { emoployee.firstName } </td>
-                        <td> { emoployee.lastName } </td>
-                        <td> { emoployee.email } </td>
+                employees.map((employee)=>
+                    <tr key = {employee.id} >
+                        <td> { employee.id } </td>
+                        <td> { employee.firstName } </td>
+                        <td> { employee.lastName } </td>
+                        <td> { employee.email } </td>
+                        <td>
+                          <button className = 'btn btn-info' onClick={ () => updateEmployee( employee.id ) } > Update </button>
+                        </td>
 
                     </tr>
                 
