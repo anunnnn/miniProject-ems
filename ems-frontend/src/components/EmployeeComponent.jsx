@@ -1,13 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { createEmployee } from '../services/EmployeeService';
+import { createEmployee, getEmployee } from '../services/EmployeeService';
 
 const EmployeeComponent = () => {
     const [ firstName, setFirstName ] = useState('');
     const [ lastName, setLastName ] = useState('');
     const [ email, setEmail ] = useState('');
 
+    const { id } = useParams();
+   // const employeeId = id ? parseInt(id, 10) : null; // Ensure it's a number
+    
     const [ errors, setErrors ] = useState({
         firstName : '',
         lastName : '',
@@ -15,7 +18,19 @@ const EmployeeComponent = () => {
     });
 
     const navigator = useNavigate();
-    const { id } = useParams();
+
+
+    useEffect(() => {
+        if (id) {
+            getEmployee(id).then((response) => {
+                setFirstName(response.data.firstName);
+                setLastName(response.data.lastName);
+                setEmail(response.data.email);
+            }).catch((error) => {
+                console.log('error');
+            })
+        }
+    }, [id])
 
    
     const saveEmployee = ( e ) => {
