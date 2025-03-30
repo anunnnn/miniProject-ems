@@ -83,6 +83,35 @@ Add Employee Feature -  Add Employee Form Validation
 3. Create JavaScripts function to handle Delete button event.
 4. Test Above Changes.
 
+Requirement 3- Build CRUD REST APIs for Department Management Module
+1. Add Department
+2. Get Department
+3. Get All Department
+4. Update Department
+5. Delete Department
+
+
+---> Create Department JPA entity
+---> Create Department Entity and Department Repository
+---> DepartmentDto and DepartmentMapper
+---> Build Create Department REST API
+---> Build Get Department REST API
+---> Build Get All Department REST API
+---> Build Update Department REST APi
+---> Build Delete Department REST API
+
+
+
+1. Entity
+2. Repository
+
+3. Dto
+4. Mapper
+
+5. service
+6. service implementation
+7. controller
+
 
 
 
